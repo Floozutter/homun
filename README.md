@@ -1,2 +1,2 @@
 # homun
-A Discord bot for Backup Potion
+A Discord bot for Backup Potion!
