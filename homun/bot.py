@@ -6,6 +6,7 @@ import discord
 from discord.ext import commands
 
 from homun.lib import owoify as owoifymodule
+from homun.lib import smh as smhmodule
 
 
 bot = commands.Bot(command_prefix=">")
@@ -19,6 +20,11 @@ async def ping(ctx):
 async def owoify(ctx, *, text: str):
     """Owoifies text."""
     await ctx.send(owoifymodule.owoify(text))
+
+@bot.command()
+async def smh(ctx, *, text: str):
+    """Expands instances of smh."""
+    await ctx.send(smhmodule.expand(text))
 
 
 def run(token: str):
