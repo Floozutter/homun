@@ -20,4 +20,5 @@ def parse_args() -> str:
 
 
 if __name__ == "__main__":
+    print("Starting Homun...")
     run(parse_args())
