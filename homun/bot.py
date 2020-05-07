@@ -22,6 +22,11 @@ async def owoify(ctx, *, text: str):
     await ctx.send(owoifymodule.owoify(text))
 
 @bot.command()
+async def owoify2(ctx, *, text: str):
+    """Owoifies text, but worse."""
+    await ctx.send(owoifymodule.owoify2(text))
+
+@bot.command()
 async def smh(ctx, *, text: str):
     """Expands instances of smh."""
     await ctx.send(smhmodule.expand(text))

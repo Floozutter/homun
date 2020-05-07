@@ -18,7 +18,6 @@ REPLACEMENTS = {
     "nu": "nyu",
     "ove": "uv"
 }
-
 def owoify(text: str) -> str:
     """
     Returns the text argument converted to owo-speak!
@@ -27,4 +26,18 @@ def owoify(text: str) -> str:
         lambda text, key: text.replace(key, REPLACEMENTS[key]),
         REPLACEMENTS.keys(),
         text.lower()
+    )
+
+REPLACEMENTS2 = {
+    "o": "owo",
+    "u": "uwu"
+}
+def owoify2(text: str) -> str:
+    """
+    Returns the text argument converted to owo-speak, but worse!
+    """
+    return reduce(
+        lambda text, key: text.replace(key, REPLACEMENTS2[key]),
+        REPLACEMENTS2.keys(),
+        owoify(text)
     )
