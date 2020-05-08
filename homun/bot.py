@@ -31,6 +31,11 @@ async def smh(ctx, *, text: str):
     """Expands instances of smh."""
     await ctx.send(smhmodule.expand(text))
 
+@bot.command()
+async def gn(ctx):
+    """Emotes goodnight."""
+    await ctx.send(":megauwu:")
+
 
 def run(token: str):
     """Runs the Bot object using the token argument."""
