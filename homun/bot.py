@@ -34,7 +34,7 @@ async def smh(ctx, *, text: str):
 @bot.command()
 async def gn(ctx):
     """Emotes goodnight."""
-    await ctx.send(":megauwu:")
+    await ctx.send("<:megauwu:679614776267243559>")
 
 
 def run(token: str):
