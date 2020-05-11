@@ -36,6 +36,10 @@ async def gn(ctx):
     """Emotes goodnight."""
     await ctx.send("<:megauwu:679614776267243559>")
 
+@bot.command()
+async def echo(ctx, *, text: str):
+    """Echos the text argument."""
+    await ctx.send(text)
 
 def run(token: str):
     """Runs the Bot object using the token argument."""
