@@ -4,12 +4,25 @@ Contains the Bot object.
 
 import discord
 from discord.ext import commands
+from discord.ext.commands.view import StringView
 
 from homun.lib import owoify as owoifymodule
 from homun.lib import smh as smhmodule
 
 
 bot = commands.Bot(command_prefix=">")
+
+# This is dirty magic.
+# It lets the bot get the full invocation context for its own messages.
+bot._skip_check = lambda x, y: False
+
+# This is also dirty magic.
+# This skips the check that prevents Discord bots from invoking commands.
+@bot.event
+async def on_message(message):
+    ctx = await bot.get_context(message)
+    await bot.invoke(ctx)
+
 
 @bot.command()
 async def ping(ctx):
@@ -40,6 +53,7 @@ async def gn(ctx):
 async def echo(ctx, *, text: str):
     """Echos the text argument."""
     await ctx.send(text)
+
 
 def run(token: str):
     """Runs the Bot object using the token argument."""
