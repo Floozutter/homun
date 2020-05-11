@@ -21,7 +21,7 @@ bot._skip_check = lambda x, y: False
 @bot.event
 async def on_message(message):
     # Strip off a zero-width space prefix, for Ayana.
-    # (Ayana responses to =say have this character, for some reason.)
+    # (Ayana's responses to =say start with this character, for some reason.)
     if message.content and ord(message.content[0]) == 8203:
         message.content = message.content[1:]
     ctx = await bot.get_context(message)
