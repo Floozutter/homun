@@ -12,6 +12,7 @@ from homun.lib import smh as smhmodule
 
 bot = commands.Bot(command_prefix=">")
 
+
 # This is dirty magic.
 # It lets the bot get the full invocation context for its own messages.
 bot._skip_check = lambda x, y: False
