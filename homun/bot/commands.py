@@ -4,6 +4,9 @@ Bot commands.
 
 from homun.bot import bot
 
+from homun.lib import owoify as owoifymodule
+from homun.lib import smh as smhmodule
+
 
 @bot.command()
 async def ping(ctx):
