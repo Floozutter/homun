@@ -2,9 +2,7 @@
 Handles the bot object as a package-level variable.
 """
 
-import discord
 from discord.ext import commands
-from discord.ext.commands.view import StringView
 
 bot = commands.Bot(command_prefix=">")
 
