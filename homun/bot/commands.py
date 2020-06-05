@@ -34,6 +34,12 @@ async def gn(ctx):
     await ctx.send("<:megauwu:679614776267243559>")
 
 @bot.command()
+async def kirbcult(ctx, *, leftwardarm: str, rightwardarm: str):
+    """Makes a cult of Kirbys using the arm args."""
+    l, r = leftwardarm, rightwardarm
+    await ctx.send(f"({r}O_O){r} {l}(O_O){r} {l}(O_O{l})")
+
+@bot.command()
 async def echo(ctx, *, text: str):
     """Echos the text argument."""
     await ctx.send(text)
