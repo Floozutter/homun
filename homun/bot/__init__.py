@@ -2,9 +2,9 @@
 Handles the bot object as a package-level variable.
 """
 
-from discord.ext import commands
+from homun.bot.bottle import BotInABottle
 
-bot = commands.Bot(command_prefix=">")
+bot = BotInABottle(command_prefix=">")
 
 import homun.bot.config
 import homun.bot.commands

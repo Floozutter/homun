@@ -4,8 +4,13 @@ Bot commands.
 
 from homun.bot import bot
 
-from homun.lib import owoify as owoifymodule
-from homun.lib import smh as smhmodule
+from homun.lib.owoify import owoify, owoify2
+from homun.lib.smh import expand
+
+
+bot.add_formatter(owoify, "owoify", "Owoifies text.")
+bot.add_formatter(owoify2, "owoify2", "Owoifies text, but worse.")
+bot.add_formatter(expand, "smh", "Expands instances of smh.")
 
 
 @bot.command()
@@ -14,19 +19,9 @@ async def ping(ctx):
     await ctx.send("pong")
 
 @bot.command()
-async def owoify(ctx, *, text: str):
-    """Owoifies text."""
-    await ctx.send(owoifymodule.owoify(text))
-
-@bot.command()
-async def owoify2(ctx, *, text: str):
-    """Owoifies text, but worse."""
-    await ctx.send(owoifymodule.owoify2(text))
-
-@bot.command()
-async def smh(ctx, *, text: str):
-    """Expands instances of smh."""
-    await ctx.send(smhmodule.expand(text))
+async def echo(ctx, *, text: str):
+    """Echos the text argument."""
+    await ctx.send(text)
 
 @bot.command()
 async def gn(ctx):
@@ -39,7 +34,3 @@ async def kirbcult(ctx, leftwardarm: str, rightwardarm: str):
     l, r = leftwardarm, rightwardarm
     await ctx.send(f"({r}O_O){r} {l}(O_O){r} {l}(O_O{l})")
 
-@bot.command()
-async def echo(ctx, *, text: str):
-    """Echos the text argument."""
-    await ctx.send(text)
