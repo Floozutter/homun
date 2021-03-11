@@ -1,3 +1,3 @@
 """
-Logging module for the Bot object.
+bot logging
 """

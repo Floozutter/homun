@@ -1,9 +1,8 @@
 """
-Expand an smh!
+expand smhs!
 """
 
 from functools import reduce
-
 
 REPLACEMENTS = {
     "smh": "smh my head",
@@ -17,7 +16,7 @@ REPLACEMENTS = {
 }
 
 def expand(text: str, depth: int = 1) -> str:
-    """Expands all occurrences of "smh" in the argument text."""
+    """expands all occurrences of 'smh' in the text argument"""
     if depth == 0:
         return text
     else:

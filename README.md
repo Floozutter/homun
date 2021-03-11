@@ -1,12 +1,12 @@
 # homun
-A Discord bot for Backup Potion!
+a Discord bot for Backup Potion!
 
-## Usage
-cmd.exe:
-```batch
-python -m homun TOKEN
+## usage
+generally:
+```
+poetry python -m homun TOKEN
 ```
 cmd.exe, from file:
-```batch
-for /f %t in (token\TOKEN.txt) do python -m homun %t
+```
+for /f %t in (token\token.txt) do poetry python -m homun %t
 ```

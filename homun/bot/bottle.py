@@ -1,10 +1,9 @@
 """
-Subclass of discord.py's Bot class with additional helper methods.
+subclass of discord.py's Bot class with additional helpers
 """
 
 from discord.ext.commands import Bot, Command
 from typing import Callable
-
 
 class BotInABottle(Bot):
     def add_formatter(self,
@@ -12,9 +11,7 @@ class BotInABottle(Bot):
         name: str,
         doc: str
     ) -> None:
-        """
-        Creates and registers a command from a simple text formatter.
-        """
+        """creates and registers a command from a simple text formatter"""
         async def func(ctx, *, text: str):
             await ctx.send(formatter(text))
         command = Command(func, name=name, help=doc)

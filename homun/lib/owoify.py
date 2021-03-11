@@ -1,12 +1,11 @@
 """
-Convert English text to owo-speak!
+convert English text to owo-speak!
 
-References:
+references:
 https://www.reddit.com/r/furry/comments/9v3snn/how_to_speak_in_owo_talk/
 """
 
 from functools import reduce
-
 
 REPLACEMENTS = {
     "l": "w",
@@ -19,9 +18,7 @@ REPLACEMENTS = {
     "ove": "uv"
 }
 def owoify(text: str) -> str:
-    """
-    Returns the text argument converted to owo-speak!
-    """
+    """returns the text argument converted to owo-speak!"""
     return reduce(
         lambda text, key: text.replace(key, REPLACEMENTS[key]),
         REPLACEMENTS.keys(),
@@ -33,9 +30,7 @@ REPLACEMENTS2 = {
     "u": "uwu"
 }
 def owoify2(text: str) -> str:
-    """
-    Returns the text argument converted to owo-speak, but worse!
-    """
+    """returns the text argument converted to owo-speak, but worse!"""
     return reduce(
         lambda text, key: text.replace(key, REPLACEMENTS2[key]),
         REPLACEMENTS2.keys(),
