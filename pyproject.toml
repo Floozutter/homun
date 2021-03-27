@@ -6,7 +6,7 @@ authors = ["Floozutter <floozutter@gmail.com>"]
 license = "Unlicense"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 "discord.py" = "^1.6.0"
 PyNaCl = "^1.4.0"
 
