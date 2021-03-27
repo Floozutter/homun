@@ -37,7 +37,7 @@ async def kirbcult(ctx, leftwardarm: str, rightwardarm: str):
 
 @bot.command()
 async def play(ctx, *, filename: str):
-    """plays a local sound file"""
+    """plays a local sound file (ANY IN THE FILESYSTEM)"""
     # Get audio source.
     filepath = f"resources/audio/{filename}"
     if not os.path.isfile(filepath):
