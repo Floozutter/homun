@@ -2,6 +2,10 @@
 a Discord bot for Backup Potion!
 
 ## usage
+install:
+```
+poetry install
+```
 generally:
 ```
 poetry run python -m homun TOKEN
