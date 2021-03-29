@@ -10,7 +10,7 @@ def parse_args() -> str:
     gets and returns the token command-line argument
     """
     parser = ArgumentParser(
-        description = "Backup Potion's Discord bot",
+        description = "Backup Potion's resident homunculus!",
         prog = "homun"
     )
     parser.add_argument("token", type = str, help = "Discord bot token")

@@ -1,5 +1,5 @@
 # homun
-a Discord bot for Backup Potion!
+Backup Potion's resident homunculus!
 
 ## usage
 install:
