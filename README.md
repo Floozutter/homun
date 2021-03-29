@@ -1,5 +1,5 @@
 # homun
-Backup Potion's resident homunculus!
+a Discord bot for Backup Potion!
 
 ## usage
 ```

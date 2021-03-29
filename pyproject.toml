@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "homun"
 version = "0.1.0"
-description = "Backup Potion's resident homunculus!"
+description = "a Discord bot for Backup Potion!"
 authors = ["Floozutter <floozutter@gmail.com>"]
 license = "Unlicense"
 
