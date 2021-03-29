@@ -2,7 +2,7 @@
 bot configuration
 """
 
-from homun.bot import bot
+from . import bot
 
 # dirty magic to let the bot get the full invocation context its own messages
 bot._skip_check = lambda x, y: False

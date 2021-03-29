@@ -2,10 +2,10 @@
 bot commands
 """
 
-from homun.bot import bot
+from . import bot
 
-from homun.lib.owoify import owoify, owoify2
-from homun.lib.smh import expand
+from ..lib.owoify import owoify, owoify2
+from ..lib.smh import expand
 
 bot.add_formatter(owoify, "owoify", "owoifies text")
 bot.add_formatter(owoify2, "owoify2", "owoifies text, but worse")
