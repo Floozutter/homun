@@ -37,8 +37,8 @@ async def kirbcult(ctx, leftwardarm: str, rightwardarm: str):
 
 @bot.command()
 async def play(ctx, *, filename: str):
-    """plays a local sound file (ANY IN THE FILESYSTEM)"""
-    # Get audio source.
+    """plays a local audio file (ANY IN THE FILESYSTEM)"""
+    # read audio file
     filepath = f"resources/audio/{filename}"
     if not os.path.isfile(filepath):
         await ctx.send("File not found!")
@@ -46,17 +46,17 @@ async def play(ctx, *, filename: str):
     source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(
         filepath
     ))
-    # Join voice channel.
+    # join voice channel
     if ctx.voice_client is not None:
         await ctx.voice_client.move_to(ctx.author.voice.channel)
     else:
         await ctx.author.voice.channel.connect()
-    # Play the audio source.
+    # play audio
     ctx.voice_client.play(
         source,
         after=lambda e: print('Player error: %s' % e) if e else None
     )
-    # Announce.
+    # announce
     await ctx.send(f"Playing: {filename}")
 
 @bot.command()
