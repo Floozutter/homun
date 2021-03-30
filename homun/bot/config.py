@@ -4,7 +4,7 @@ bot configuration
 
 from . import bot
 
-# dirty magic to let the bot get the full invocation context its own messages
+# dirty magic to let the bot get the full invocation context for its own messages
 bot._skip_check = lambda x, y: False
 
 # dirty magic to let other Discord bots invoke commands
