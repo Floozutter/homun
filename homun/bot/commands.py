@@ -56,9 +56,10 @@ async def lucario(ctx):
 async def play(ctx):
     """plays a local coconut-mall.mp3"""
     # read audio file
-    filepath = f"resources/audio/coconut-mall.mp3"
+    filename = "coconut-mall.mp3"
+    filepath = f"resources/audio/{filename}"
     if not os.path.isfile(filepath):
-        await ctx.send("File not found!")
+        await ctx.send("file not found!")
         return
     source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(
         filepath
@@ -71,13 +72,13 @@ async def play(ctx):
     # play audio
     ctx.voice_client.play(
         source,
-        after=lambda e: print('Player error: %s' % e) if e else None
+        after=lambda e: print('player error: %s' % e) if e else None
     )
     # announce
-    await ctx.send(f"Playing: {filename}")
+    await ctx.send(f"playing: {filename}")
 
 @bot.command()
 async def leave(ctx):
     """leaves voice channel"""
     await ctx.voice_client.disconnect()
-    await ctx.send(f"Bye-bye!")
+    await ctx.send(f"bye-bye!")
