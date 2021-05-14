@@ -41,17 +41,15 @@ async def lucario(ctx):
     """posts a random (safe) Lucario image from e621"""
     response = requests_html.HTMLSession().get(
         "https://e621.net/posts.json?"
-        "tags=lucario+rating:safe+score:%3E=100+order:random&limit=1"
+        "tags=lucario+rating:safe+score:%3E=100+type:jpg+type:png+type:gif+order:random&limit=1"
     )
     json = response.json()
     post = next(iter(json["posts"]))
     id = post["id"]
     url = post["file"]["url"]
-    embed = discord.Embed(
-        title = "a wild lucario appeared!",
-        description = f"e621 id: `{id}`",
-    )
-    embed.set_image(url = url)
+    embed = discord.Embed(title = "a wild lucario appeared!")
+    embed.set_image(url = post["file"]["url"])
+    embed.set_author(name = post['id'], icon_url = "https://e621.net/favicon.ico")
     await ctx.send(embed = embed)
 
 @bot.command()
