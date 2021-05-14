@@ -12,6 +12,7 @@ bot.add_formatter(owoify2, "owoify2", "owoifies text, but worse")
 bot.add_formatter(expand, "smh", "expands instances of smh")
 
 import discord
+import requests_html
 import os.path
 
 @bot.command()
@@ -34,6 +35,24 @@ async def kirbcult(ctx, leftwardarm: str, rightwardarm: str):
     """makes a cult of Kirbys from the arm args"""
     l, r = leftwardarm, rightwardarm
     await ctx.send(f"({r}O_O){r} {l}(O_O){r} {l}(O_O{l})")
+
+@bot.command()
+async def lucario(ctx):
+    """posts a random (safe) Lucario image from e621"""
+    response = requests_html.HTMLSession().get(
+        "https://e621.net/posts.json?"
+        "tags=lucario+rating:safe+score:%3E=100+order:random&limit=1"
+    )
+    json = response.json()
+    post = next(iter(json["posts"]))
+    id = post["id"]
+    url = post["file"]["url"]
+    embed = discord.Embed(
+        title = "a wild lucario appeared!",
+        description = f"e621 id: `{id}`",
+    )
+    embed.set_image(url = url)
+    await ctx.send(embed = embed)
 
 @bot.command()
 async def play(ctx, *, filename: str):
