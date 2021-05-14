@@ -41,7 +41,7 @@ async def lucario(ctx):
     """posts a random (safe) Lucario image from e621"""
     response = requests_html.HTMLSession().get(
         "https://e621.net/posts.json?"
-        "tags=lucario+rating:safe+score:%3E=100+type:jpg+type:png+type:gif+order:random&limit=1"
+        "tags=lucario+rating:safe+score:%3E=50+-type:mp4+-type:swf+-type:webm+-type:zip+order:random&limit=1"
     )
     json = response.json()
     post = next(iter(json["posts"]))
