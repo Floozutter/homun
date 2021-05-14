@@ -53,10 +53,10 @@ async def lucario(ctx):
     await ctx.send(embed = embed)
 
 @bot.command()
-async def play(ctx, *, filename: str):
-    """plays a local audio file (ANY IN THE FILESYSTEM)"""
+async def play(ctx):
+    """plays a local coconut-mall.mp3"""
     # read audio file
-    filepath = f"resources/audio/{filename}"
+    filepath = f"resources/audio/coconut-mall.mp3"
     if not os.path.isfile(filepath):
         await ctx.send("File not found!")
         return
